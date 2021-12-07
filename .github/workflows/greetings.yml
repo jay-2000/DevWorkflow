@@ -1,0 +1,17 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Hi 😄, thanks for creating your first issue at DevWorkflow!🚀⚡. Do read and follow the [Code of Conduct](github.com) while contributing.'
+        pr-message: 'Thank you for your pull request and welcome to our community! We will soon be getting back to you. Your patience will be greatly appreciated!Thank you and have a Nice Day! 🥳'
+
